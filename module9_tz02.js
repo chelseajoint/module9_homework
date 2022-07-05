@@ -15,9 +15,6 @@ const jsonString = `{
 }`;
 //console.log(jsonString);
 
-//создаем переменную объект
-const result = [];
-
 //парсим json
 const jsonStringParse = JSON.parse(jsonString);
 //console.log(jsonStringParse);

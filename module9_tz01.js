@@ -25,7 +25,7 @@ const xmlString = `
 //console.log(xmlString);
 
 //создаем переменную объект
-const list = [];
+let list = [];
 
 //парсим xml
 const xmlDOM = parser.parseFromString(xmlString, 'text/xml');
