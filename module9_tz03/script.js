@@ -1,22 +1,19 @@
 //поиск кнопки
 const cta = document.getElementById('button');
-//поиск дива для вставки реззултата запроса
-const result = document.getElementById('result');
-//поиск инпута
-const input = document.getElementById('input');
 
 //создаем экземпляр класса XMLHttpRequest
 const xhr = new XMLHttpRequest();
 
 //создаем функцию запроса и обработки
-cta.onclick = () => {
-  //вычисляем значение инпута
-  const inputValue = input.value;
-  let resultContent;
+cta.addEventListener('click', () => {
+  //поиск инпутa
+  const input = document.getElementById('input').value;
+  //поиск дива для вставки реззултата запроса
+  const result = document.getElementById('result');
 
   //если число попадает в диапазон от 1 до 10
-  if(inputValue >= 1 && inputValue <= 10){
-    const url = `https://picsum.photos/v2/list?limit=${inputValue}`;
+  if(input >= 1 && input <= 10){
+    const url = `https://picsum.photos/v2/list?limit=${input}`;
     //открываем новый запрос
     xhr.open("GET", url);
     //устанавливаем responseType. Теперь XHR знает, что сервер будет возвращать JSON
@@ -39,4 +36,4 @@ cta.onclick = () => {
   }else{ //если число не попадает в диапазон от 1 до 10 ввыводим текст
     result.innerHTML = `<p>число вне диапазона от 1 до 10</p>`;
   }
-}
+});
